@@ -1,0 +1,55 @@
+[versions] # To declare versions which can be referenced by dependencies
+ktor = "2.3.1"
+napier = "2.6.1"
+kotlinx-serialization = "1.5.1"
+androidx-material3 = "1.2.0-alpha02"
+androidx-appcompat = "1.6.1"
+androidx-compose = "1.7.1"
+compose-version = "1.4.3"
+androidx-constraintlayout = "2.1.4"
+kotlinx-coroutines = "1.7.1"
+desugar-jdk-libs = "2.0.3"
+plugin-android = "8.0.2"
+plugin-gver = "0.47.0"
+plugin-kotlin = "1.8.21"
+
+[libraries] # To declare the aliases of coordinates
+
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+
+ktor-clinet-ios = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-contentnegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+
+napier = { module = "io.github.aakira:napier", version.ref = "napier" }
+
+androidx-material = { module = "androidx.compose.material:material", version.ref = "compose-version" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidx-material3" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-compose" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose-version" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose-version" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-version" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-version" }
+
+plugin-android = { module = "com.android.tools.build:gradle", version.ref = "plugin-android" }
+plugin-gver = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "plugin-gver" }
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "plugin-kotlin" }
+plugin-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "plugin-kotlin" }
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar-jdk-libs" }
+
+[bundles] # to declare dependency bundles
+plugins = [
+    "plugin-android",
+    "plugin-gver",
+    "plugin-kotlin",
+    "plugin-kotlin-serialization",
+]
+
+[plugins] # To declare plugin
