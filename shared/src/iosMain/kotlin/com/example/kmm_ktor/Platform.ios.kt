@@ -1,9 +1,25 @@
 package com.example.kmm_ktor
 
-import platform.UIKit.UIDevice
+import io.github.aakira.napier.DebugAntilog
+import io.github.aakira.napier.Napier
+import io.ktor.client.HttpClient
+import io.ktor.client.HttpClientConfig
 
-class IOSPlatform: Platform {
-    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
+actual class Platform actual constructor() {
+    actual val platform: String =
+        UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
 }
 
-actual fun getPlatform(): Platform = IOSPlatform()
+actual fun httpClient(config: HttpClientConfig<*>.() -> Unit) = HttpClient(Darwin) {
+    config(this)
+
+    engine {
+        configureRequest {
+            setAllowsCellularAccess(true)
+        }
+    }
+}
+
+actual fun initLogger() {
+    Napier.base(DebugAntilog())
+}
